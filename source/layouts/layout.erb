@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Title</title>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <%= stylesheet_link_tag "style" %>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+    <%= javascript_include_tag  "all" %>
+
+    <!--[if IE]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <%= partial "/partial/header" %>
+
+    <%= yield %>
+
+    <%= partial "/partial/footer" %>
+    <%= partial "/partial/script" %>
+  </body>
+</html>
