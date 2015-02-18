@@ -59,8 +59,8 @@ set :slim, { :pretty => true, :sort_attrs => false, :format => :html5 }
 # Tumblargh
 require 'tumblargh'
 activate :tumblargh,
-  api_key: 'xpaBkSPgeOo3mVNFvrFmTgGOU9sqtVhtqIDUzr3LPukezDrG4C', # OAuth consumer keyを入れて、どうぞ
-  blog: 'memo.brdr.jp' # `memo.brdr.jp` みたいにhttp://を抜いたURLを入れる
+  api_key: 'DpXY4e16svMX41dMMFJahqjRsdHqDFVGoOR7du7d1dhIj0XQ0w', # OAuth consumer keyを入れて、どうぞ
+  blog: 'ryo-lovelive.tumblr.com' # `memo.brdr.jp` みたいにhttp://を抜いたURLを入れる
 
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'

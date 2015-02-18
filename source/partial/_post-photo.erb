@@ -1,0 +1,20 @@
+<article class="m-post m-post--{PostType}">
+  <!-- thumbnail -->
+  <div class="m-post-thumbnail">
+    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+  </div>
+  <!-- info -->
+  <div class="m-post-info">
+    <input type="text" name="imageurl" class="m-post-infoUrl" value="{PhotoURL-HighRes}" readonly></input>
+    <a class="m-post-infoTweet" href="#">Tw</a>
+    <a class="m-post-infoPermalink" href="{Permalink}">Pl</a>
+  </div>
+  <!-- tag -->
+  {block:HasTags}
+    <div class="m-post-tag">
+      {block:Tags}
+        <a href="{TagURL}" class="m-post-tagItem">#{Tag}</a>
+      {/block:Tags}
+    </div>
+  {/block:HasTags}
+</article>

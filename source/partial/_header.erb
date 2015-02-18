@@ -1,4 +1,33 @@
-<!-- Header -->
+<!-- header -->
 <header class="l-header">
-  <h1>Header</h1>
+  <!-- site title -->
+  <div class="m-siteTitle">
+    <% if environment == :development %>
+      <div class="m-siteTitle-icon"><img src="https://38.media.tumblr.com/avatar_2c824889a329_64.png" alt=""></div>
+    <% elsif environment == :build %>
+      {block:IfShowProfileImage}
+        <div class="m-siteTitle-icon"><img src="{PortraitURL-128}" alt=""></div>
+      {/block:IfShowProfileImage}
+    <% end %>
+    <div class="m-siteTitle-text">
+      <h1 class="m-siteTitle-name"><a href="/">{Title}</a></h1>
+      {block:IfShowDescription}
+        <p class="m-siteTitle-description">{Description}</p>
+      {/block:IfShowDescription}
+    </div>
+  </div>
+
+  <!-- navigation -->
+  <nav class="m-navigation">
+    <ul class="m-navigationList">
+      {block:HasPages}
+        {block:Pages}
+          <li><a href="{URL}">{Label}</a></li>
+        {/block:Pages}
+      {/block:HasPages}
+      <li><a href="/archive">Archive</a></li>
+    </ul>
+
+    <div class="m-navigationToggle js-toggle">Menu</div>
+  </nav>
 </header>

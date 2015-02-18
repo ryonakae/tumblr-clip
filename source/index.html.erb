@@ -2,36 +2,26 @@
 layout: layout
 ---
 
-<section class="l-main">
-  {block:Posts}
-    <!-- PostType: {PostType} -->
-    <article class="m-post">
-      <header class="m-postHeader">
-        {block:Title}
-          <h1 class="m-post-title"><a href="{Permalink}">{Title}</a></h1>
-          {block:Date}
-            <p class="date hovercolor-sub">
-              <a href="{Permalink}">
-                <i class="icon icon-clock"></i>
-                {block:NewDayDate}
-                  <time pubdate="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">
-                    {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero} / {TimeAgo}
-                  </time>
-                {/block:NewDayDate}
-                {block:SameDayDate}
-                  <time pubdate="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">
-                    {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero} / {TimeAgo}
-                  </time>
-                {/block:SameDayDate}
-              </a>
-            </p>
-          {/block:Date}
-        {/block:Title}
-      </header>
+<!-- main -->
+{block:IndexPage}
+  <section class="l-main l-main--index">
+    {block:Posts}
+      <!-- post {PostType} -->
+      {block:Photo}
+        <%= partial "/partial/post-photo" %>
+      {/block:Photo}
 
-      <div class="m-postContent">
-        content here
-      </div>
-    </article>
-  {/block:Posts}
-</section>
+      <% if environment == :build %>
+        {block:Photoset}
+          <%= partial "/partial/post-photoset" %>
+        {/block:Photoset}
+      <% end %>
+    {/block:Posts}
+  </section>
+{/block:IndexPage}
+
+{block:PermalinkPage}
+  <section class="l-main l-main--permalink">
+    Permalink Page
+  </section>
+{/block:PermalinkPage}

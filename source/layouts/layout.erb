@@ -3,15 +3,32 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Title</title>
+    <!-- Tumblr Variables -->
+    <meta name="if:Show Description" content="1">
+    <meta name="if:Show Profile Image" content="1">
+    <meta name="if:Enable Google Analytics" content="0">
+    <meta name="color:Link Color" content="#33A6B8">
+    <meta name="text:Google Analytics ID" content="">
 
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="robots" content="index,follow">
+    <title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
+
+    {block:Description}
+      <meta name="description" content="{MetaDescription}">
+    {/block:Description}
+    {block:TagPage}
+      <meta name="robots" content="noindex,follow">
+    {/block:TagPage}
+    {block:DayPage}
+      <meta name="robots" content="noindex,follow">
+    {/block:DayPage}
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <%= stylesheet_link_tag "style" %>
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+    <style>
+      {CustomCSS}
+    </style>
 
     <%= javascript_include_tag  "all" %>
 
