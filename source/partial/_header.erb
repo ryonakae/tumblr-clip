@@ -1,33 +1,52 @@
 <!-- header -->
 <header class="l-header">
-  <!-- site title -->
-  <div class="m-siteTitle">
-    <% if environment == :development %>
-      <div class="m-siteTitle-icon"><img src="https://38.media.tumblr.com/avatar_2c824889a329_64.png" alt=""></div>
-    <% elsif environment == :build %>
-      {block:IfShowProfileImage}
-        <div class="m-siteTitle-icon"><img src="{PortraitURL-128}" alt=""></div>
-      {/block:IfShowProfileImage}
-    <% end %>
-    <div class="m-siteTitle-text">
-      <h1 class="m-siteTitle-name"><a href="/">{Title}</a></h1>
-      {block:IfShowDescription}
-        <p class="m-siteTitle-description">{Description}</p>
-      {/block:IfShowDescription}
+  <div class="l-container">
+    <!-- site title -->
+    <div class="m-siteTitle">
+      <% if environment == :development %>
+        <div class="m-siteTitle-icon"><img src="https://38.media.tumblr.com/avatar_2c824889a329_64.png" alt=""></div>
+      <% elsif environment == :build %>
+        {block:IfShowProfileImage}
+          <div class="m-siteTitle-icon"><img src="{PortraitURL-128}" alt=""></div>
+        {/block:IfShowProfileImage}
+      <% end %>
+      <div class="m-siteTitle-text">
+        <h1 class="m-siteTitle-name"><a href="/">{Title}</a></h1>
+        {block:IfShowDescription}
+          <p class="m-siteTitle-description">{Description}</p>
+        {/block:IfShowDescription}
+      </div>
+    </div>
+
+    <!-- navigation -->
+    <nav class="m-navigation">
+      <ul class="m-navigation-list">
+        {block:HasPages}
+          {block:Pages}
+            <li class="m-navigation-listItem">
+              <a href="{URL}">{Label}</a>
+            </li>
+          {/block:Pages}
+        {/block:HasPages}
+        <li class="m-navigation-listItem">
+          <a href="/archive">Archive</a>
+        </li>
+      </ul>
+
+      <div class="m-navigation-toggle js-toggle">Menu</div>
+    </nav>
+  </div>
+</header>
+
+<!-- tag cloud -->
+<div class="l-tagCloud">
+  <div class="l-container">
+    <div class="m-tagCloud">
+      <div class="m-tagCloud-title">Tags:</div>
+      <div class="m-tagCloud-list">
+        <!-- http://post-theory.com/tumblr-tag-cloud-javascript -->
+        <div id="tagCloud"></div><script type="text/javascript" src="//post-theory.com/public/tagcloud/ryo-lovelive?tn={Name}&sort=time&mincount=1&scale=false&html=ul&tagct=(%24)&scalect=false" async="async"></script>
+      </div>
     </div>
   </div>
-
-  <!-- navigation -->
-  <nav class="m-navigation">
-    <ul class="m-navigationList">
-      {block:HasPages}
-        {block:Pages}
-          <li><a href="{URL}">{Label}</a></li>
-        {/block:Pages}
-      {/block:HasPages}
-      <li><a href="/archive">Archive</a></li>
-    </ul>
-
-    <div class="m-navigationToggle js-toggle">Menu</div>
-  </nav>
-</header>
+</div>

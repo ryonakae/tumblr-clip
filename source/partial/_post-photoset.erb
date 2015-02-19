@@ -5,16 +5,29 @@
   </div>
   <!-- info -->
   <div class="m-post-info">
-    <input type="text" name="imageurl" class="m-post-infoUrl" value="{PhotoURL-HighRes}" readonly></input>
-    <a class="m-post-infoTweet" href="#">Tw</a>
-    <a class="m-post-infoPermalink" href="{Permalink}">Pl</a>
+    <div class="m-post-infoUrl">
+      <i class="m-post-infoUrlIcon m-icon icon-link"></i>
+      <input type="text" name="imageurl" value="{PhotoURL-HighRes}" readonly class="m-post-infoUrlInput js-inputUrl"></input>
+    </div>
+    <div class="m-post-infoTweet">
+      <a href="#">
+        <i class="m-icon icon-twitter"></i>
+      </a>
+    </div>
+    <div class="m-post-infoPermalink">
+      <a href="{Permalink}">
+        <i class="m-icon icon-dot-3"></i>
+      </a>
+    </div>
   </div>
   <!-- tag -->
   {block:HasTags}
-    <div class="m-post-tag">
+    <ul class="m-post-tag">
       {block:Tags}
-        <a href="{TagURL}" class="m-post-tagItem">#{Tag}</a>
+        <li class="m-post-tagItem">
+          <a href="{TagURL}">#{Tag}</a>
+        </li>
       {/block:Tags}
-    </div>
+    </ul>
   {/block:HasTags}
 </article>

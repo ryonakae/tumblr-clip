@@ -1,0 +1,33 @@
+.m-tagCloud
+  padding-top: 1em
+  padding-bottom: 1em
+  display: table
+  width: 100%
+
+.m-tagCloud-title
+  display: table-cell
+  vertical-align: middle
+  font-weight: bold
+  font-size: rem(13)
+  color: palette("font", "tagcloudtitle")
+  width: 4em
+
+.m-tagCloud-list
+  display: table-cell
+  vertical-align: middle
+
+  ul
+    list-style-type: none
+    margin: -0.2em 0 0
+    padding: 0
+    line-height: 1.4
+
+  li
+    +inline-block
+    margin-left: 0.5em
+    margin-right: 0.5em
+    font-size: rem(13)
+    color: palette("font", "tag")
+
+    > span:before
+      content: '#'
