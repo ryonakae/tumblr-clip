@@ -67,6 +67,13 @@ set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 set :fonts_dir, 'assets/fonts'
 
+# Bower
+after_configuration do
+  bowerrc = JSON.parse File.read(File.join "#{root}", '.bowerrc')
+  bower_dir = bowerrc['directory']
+  sprockets.append_path File.join("#{root}", bower_dir)
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment

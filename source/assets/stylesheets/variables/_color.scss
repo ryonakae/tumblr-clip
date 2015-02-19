@@ -7,12 +7,20 @@
 
 // Set Colors
 $colors: (
-  font: (
-    base: #333,
-    inverse: #fff
+  "font": (
+    "base": #333,
+    "link": #33A6B8,
+    "sitetitle": #1a1a1a,
+    "sitedescription": #aaa,
+    "url": #aaa,
+    "infobutton": #aaa,
+    "tag": #aaa
   ),
-  bg: (
-    base: #fff,
-    inverse: #000
+  "bg": (
+    "base": #eee,
+    "header": #fff,
+    "post": #fff,
+    "url": #F8F8F8,
+    "button": #bdebff
   )
 );

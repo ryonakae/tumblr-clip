@@ -20,3 +20,35 @@
   font-size: 1rem
   letter-spacing: normal
   word-spacing: normal
+
+
+// Media Queries Settings
+// Retina
+=mediaquery-retina
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx)
+    @content
+
+// PC Large
+=mediaquery-pc-large
+  @media only screen and (max-width: 1399px)
+    @content
+
+// PC
+=mediaquery-pc
+  @media only screen and (max-width: 1199px)
+    @content
+
+// Tablet
+=mediaquery-tablet
+  @media only screen and (max-width: 899px)
+    @content
+
+// Small Tablet & SmartPhone
+=mediaquery-tablet-small
+  @media only screen and (max-width: 699px)
+    @content
+
+// SmartPhone
+=mediaquery-smartphone
+  @media only screen and (max-width: 479px)
+    @content

@@ -1,0 +1,92 @@
+.m-post
+  background: palette("bg", "post")
+
+
+.m-post--photo,
+.m-post--photoset,
+  float: left
+  width: 20%
+
+  +mediaquery-pc-large
+    float: left
+    width: 25%
+
+  +mediaquery-pc
+    float: left
+    width: 33.33333%
+
+  +mediaquery-tablet
+    float: left
+    width: 33.33333%
+
+  +mediaquery-tablet-small
+    float: left
+    width: 50%
+
+  +mediaquery-smartphone
+    float: none
+    width: 100%
+
+
+.m-post-thumbnail
+  img
+    width: 100%
+    height: auto
+    vertical-align: top
+
+
+.m-post-info
+  display: table
+  width: 100%
+  background-color: palette("bg", "url")
+  padding-left: 15px
+  padding-right: 15px
+
+  > *
+    display: table-cell
+    vertical-align: middle
+
+.m-post-infoUrl
+  position: relative
+
+.m-post-infoUrlInput
+  width: 100%
+  border: none
+  color: palette("font", "url")
+  font-size: rem(10)
+  background: none
+  padding: 1em 1em 1.1em 2em
+  +ellipsis
+
+.m-post-infoUrlIcon
+  color: palette("font", "url")
+  font-size: rem(11)
+  position: absolute
+  top: 50%
+  left: 0
+  transform: translateY(-55%)
+
+.m-post-infoTweet,
+.m-post-infoPermalink
+  width: 30px
+  text-align: center
+  background-color: palette("bg", "url")
+  // border-left: 1px solid palette("bg", "post")
+  color: palette("font", "infobutton")
+
+  a
+    display: block
+    width: 100%
+    height: 100%
+    font-size: rem(15)
+
+
+.m-post-tag
+  padding: 0.3em 15px 0.45em
+  list-style-type: none
+  margin: 0
+
+.m-post-tagItem
+  +inline-block
+  color: palette("font", "tag")
+  font-size: rem(11)
