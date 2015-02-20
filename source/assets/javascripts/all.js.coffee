@@ -1,5 +1,5 @@
-#= require 'jquery/dist/jquery.min.js'
-#= require 'masonry/dist/masonry.pkgd.min.js'
+#= require 'jquery/dist/jquery.js'
+#= require 'masonry/dist/masonry.pkgd.js'
 #= require_tree ./lib
 
 # jQuery
@@ -22,8 +22,20 @@ $ ->
       gutter: 0
       transitionDuration: 0
 
+  # Inifinite Scroll
+  $pager = $('.js-pager')
+  $pagerNext = $('.js-pager-next')
+  $masonryParent.infinitescroll
+    navSelector: $pager
+    nextSelector: $pagerNext
+    itemSelector: '.m-post'
+    (elm) ->
+      $newItem = $(elm)
+      $newItem.imagesLoaded ->
+        $masonryParent.masonry('append', $newItem, true)
 
-  # Input
+
+  # Image URL
   $inputUrl = $('.js-inputUrl')
   $inputUrl.on 'mouseup', ->
     $(this).select()

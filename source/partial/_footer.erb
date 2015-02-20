@@ -1,3 +1,21 @@
+<% if environment == :development %>
+  <!-- pager -->
+  <div class="m-pager js-pager">
+    <a class="js-pager-next" href="/page/2" rel="next">Next</a>
+  </div>
+<% elsif environment == :build %>
+  {block:IndexPage}
+    {block:Pagination}
+      <!-- pager -->
+      <div class="m-pager js-pager">
+        {block:NextPage}
+          <a class="js-pager-next" href="{NextPage}" rel="next">Next</a>
+        {block:NextPage}
+      </div>
+    {/block:Pagination}
+  {/block:IndexPage}
+<% end %>
+
 <!-- footer -->
 <footer class="l-footer">
   <div class="m-footerInfo">

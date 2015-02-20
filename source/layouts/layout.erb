@@ -8,6 +8,7 @@
     <meta name="if:Show Profile Image" content="1">
     <meta name="if:Enable Google Analytics" content="0">
     <meta name="color:Link Color" content="#33A6B8">
+    <meta name="text:Twitter User ID" content="@">
     <meta name="text:Google Analytics ID" content="">
 
     <title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
@@ -22,18 +23,29 @@
       <meta name="robots" content="noindex,follow">
     {/block:DayPage}
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
     <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 
     <%= stylesheet_link_tag "style", :inline => "" %>
     <style>
+      <% if environment == :build %>
+        /* Link Color */
+        a:hover {
+          color: {color:Link Color};
+        }
+      <% end %>
+
+      /* Custom CSS */
       {CustomCSS}
     </style>
 
-    <%= javascript_include_tag "all", :inline => "" %>
+    <%= partial "/partial/ogp" %>
 
+    <%= javascript_include_tag "all", :inline => "" %>
     <!--[if IE]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

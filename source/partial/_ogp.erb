@@ -1,0 +1,27 @@
+<!-- OGP -->
+<meta property="og:title" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:description" content="{MetaDescription}">
+<meta property="og:site_name" content="{Title}">
+{block:IndexPage}
+  <meta property="og:url" content="{BlogURL}">
+  <meta property="og:image" content="{PortraitURL-128}">
+{/block:IndexPage}
+{block:PermalinkPage}
+  {block:Posts}
+    <meta property="og:url" content="{Permalink}">
+    {block:Photo}
+      <meta property="og:image" content="{PhotoURL-HighRes}">
+    {/block:Photo}
+    {block:Photoset}
+      {block:Photos}
+        <meta property="og:image" content="{PhotoURL-HighRes}">
+      {/block:Photos}
+    {/block:Photoset}
+  {/block:Posts}
+{/block:PermalinkPage}
+<% if environment == :build %>
+  <meta name="twitter:site" value="{text:Twitter User ID}">
+<% end %>
+<meta meta name="twitter:card" value="summary_large_image">
