@@ -1,0 +1,24 @@
+{
+  "name": "tumblr-clip",
+  "version": "1.0.0",
+  "description": "画像をTwitterに貼ることに特化したTumblrテーマ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryonakae/tumblr-clip.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryonakae/tumblr-clip/issues"
+  },
+  "homepage": "https://github.com/ryonakae/tumblr-clip",
+  "devDependencies": {
+    "coffee-script": "^1.9.1",
+    "gulp": "^3.8.11",
+    "gulp-inline-source": "^1.2.0"
+  }
+}

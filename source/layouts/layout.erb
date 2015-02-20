@@ -22,15 +22,14 @@
       <meta name="robots" content="noindex,follow">
     {/block:DayPage}
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-    <%= stylesheet_link_tag "style" %>
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
+    <%= stylesheet_link_tag "style", :inline => "" %>
     <style>
       {CustomCSS}
     </style>
 
-    <%= javascript_include_tag  "all" %>
+    <%= javascript_include_tag "all", :inline => "" %>
 
     <!--[if IE]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>

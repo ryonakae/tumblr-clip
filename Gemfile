@@ -10,3 +10,4 @@ gem "middleman-livereload"
 gem "middleman-deploy"
 
 gem "tumblargh"
+gem "middleman-remove-indent"
