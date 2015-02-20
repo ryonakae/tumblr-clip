@@ -4,6 +4,10 @@
   display: table
   width: 100%
 
+  +mediaquery-tablet-small
+    padding-top: 0.7em
+    padding-bottom: 0.7em
+
 .m-tagCloud-title
   display: table-cell
   vertical-align: middle
@@ -11,6 +15,10 @@
   font-size: rem(13)
   color: palette("font", "tagcloudtitle")
   width: 4em
+
+  +mediaquery-tablet-small
+    font-size: rem(11)
+    width: 3em
 
 .m-tagCloud-list
   display: table-cell
@@ -22,6 +30,9 @@
     padding: 0
     line-height: 1.4
 
+    +mediaquery-tablet-small
+      margin-top: -0.5em
+
   li
     +inline-block
     margin-left: 0.5em
@@ -31,3 +42,6 @@
 
     > span:before
       content: '#'
+
+    +mediaquery-tablet-small
+      font-size: rem(11)

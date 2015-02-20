@@ -27,3 +27,11 @@ $ ->
   $inputUrl = $('.js-inputUrl')
   $inputUrl.on 'mouseup', ->
     $(this).select()
+
+
+  # Navigation
+  $navToggle = $('.js-navToggle')
+  $navList = $('.js-navList')
+
+  $navToggle.on 'click', ->
+    $navList.toggleClass('is-nav-open')

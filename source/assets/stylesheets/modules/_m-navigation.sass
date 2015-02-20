@@ -1,5 +1,55 @@
 .m-navigation
   float: right
 
+.m-navigation-list
+  list-style-type: none
+  margin: 0
+  padding: 0
+  position: absolute
+  top: 50%
+  right: 4%
+  transform: translateY(-50%)
+
+  +mediaquery-tablet-small
+    display: none
+    background-color: rgba(palette("bg", "header"), 0.9)
+    width: 100%
+    left: 0
+    top: 0
+    transform: translateY(0%)
+    box-shadow: 0px 1px 4px 0 rgba(0, 0, 0, 0.2)
+    padding-top: 65px
+
+    &.is-nav-open
+      display: block
+
+.m-navigation-listItem
+  font-weight: bold
+  font-size: rem(14)
+  +inline-block
+  margin-left: 1.5em
+  color: palette("font", "navigation")
+
+  &:first-child
+    margin-left: 0
+
+  +mediaquery-tablet-small
+    display: block
+    border-top: 1px solid palette("bg", "base")
+    margin-left: 0
+
+    a
+      display: block
+      padding: 1em 4%
+
+
 .m-navigation-toggle
   display: none
+
+  position: absolute
+  top: 6px
+  left: 2.5%
+  font-size: rem(30)
+
+  +mediaquery-tablet-small
+    display: block

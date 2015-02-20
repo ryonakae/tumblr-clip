@@ -20,20 +20,42 @@
 
     <!-- navigation -->
     <nav class="m-navigation">
-      <ul class="m-navigation-list">
-        {block:HasPages}
-          {block:Pages}
-            <li class="m-navigation-listItem">
-              <a href="{URL}">{Label}</a>
-            </li>
-          {/block:Pages}
-        {/block:HasPages}
-        <li class="m-navigation-listItem">
-          <a href="/archive">Archive</a>
-        </li>
-      </ul>
+      <% if environment == :development %>
+        <ul class="m-navigation-list js-navList">
+          <li class="m-navigation-listItem">
+            <a href="#">Content1</a>
+          </li>
+          <li class="m-navigation-listItem">
+            <a href="#">Content2</a>
+          </li>
+          <li class="m-navigation-listItem">
+            <a href="#">Content3</a>
+          </li>
+          <li class="m-navigation-listItem">
+            <a href="#">Content4</a>
+          </li>
+          <li class="m-navigation-listItem">
+            <a href="#">Content5</a>
+          </li>
+        </ul>
+      <% elsif environment == :build %>
+        <ul class="m-navigation-list js-navList">
+          {block:HasPages}
+            {block:Pages}
+              <li class="m-navigation-listItem">
+                <a href="{URL}">{Label}</a>
+              </li>
+            {/block:Pages}
+          {/block:HasPages}
+          <li class="m-navigation-listItem">
+            <a href="/archive">Archive</a>
+          </li>
+        </ul>
+      <% end %>
 
-      <div class="m-navigation-toggle js-toggle">Menu</div>
+      <div class="m-navigation-toggle js-navToggle">
+        <i class="m-icon icon-menu"></i>
+      </div>
     </nav>
   </div>
 </header>

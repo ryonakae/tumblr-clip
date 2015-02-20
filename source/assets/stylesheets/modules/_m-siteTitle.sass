@@ -1,11 +1,16 @@
 .m-siteTitle
   float: left
 
+  +mediaquery-tablet-small
+    float: none
+    text-align: center
+
+
 .m-siteTitle-icon
   +inline-block
   vertical-align: middle
-  width: 70px
-  height: 70px
+  width: 60px
+  height: 60px
   border-radius: 50%
   overflow: hidden
   margin-right: 10px
@@ -13,16 +18,25 @@
   img
     width: 100%
 
+  +mediaquery-tablet-small
+    display: block
+    margin-right: auto
+    margin-left: auto
+    margin-bottom: 10px
+
+
 .m-siteTitle-text
   +inline-block
   vertical-align: middle
+
 
 .m-siteTitle-name
   margin: 0
   font-size: rem(24)
   color: palette("font", "sitetitle")
 
+
 .m-siteTitle-description
-  margin: 10px 0 0
-  font-size: rem(13)
+  margin: 0.5em 0 0
+  font-size: rem(12)
   color: palette("font", "sitedescription")
