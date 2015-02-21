@@ -1,7 +1,3 @@
-#= require 'jquery/dist/jquery.js'
-#= require 'masonry/dist/masonry.pkgd.js'
-#= require_tree ./lib
-
 # jQuery
 $ ->
   # window size
@@ -30,9 +26,10 @@ $ ->
     nextSelector: $pagerNext
     itemSelector: '.m-post'
     (elm) ->
-      $newItem = $(elm)
+      $newItem = $(elm).css('opacity' : 0)
       $newItem.imagesLoaded ->
-        $masonryParent.masonry('append', $newItem, true)
+        $masonryParent.masonry('appended', $newItem)
+        $newItem.css('opacity' : 1)
 
 
   # Image URL

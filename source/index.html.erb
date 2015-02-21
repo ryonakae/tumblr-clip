@@ -10,12 +10,6 @@ layout: layout
       {block:Photo}
         <%= partial "/partial/post-photo" %>
       {/block:Photo}
-
-      <% if environment == :build %>
-        {block:Photoset}
-          <%= partial "/partial/post-photoset" %>
-        {/block:Photoset}
-      <% end %>
     {/block:Posts}
   </section>
 {/block:IndexPage}

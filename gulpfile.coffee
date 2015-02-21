@@ -4,5 +4,9 @@ inline = require 'gulp-inline-source'
 gulp.task 'inline', ->
   gulp
     .src 'build/*.html'
-    .pipe inline()
+    .pipe inline
+      compress: false
+      inlineJS: true
+      inlineCSS: true
+      pretty: true
     .pipe gulp.dest 'build/'
