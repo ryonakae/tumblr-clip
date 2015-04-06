@@ -67,7 +67,11 @@
       <div class="m-tagCloud-title">Tags:</div>
       <div class="m-tagCloud-list">
         <!-- http://post-theory.com/tumblr-tag-cloud-javascript -->
-        <div id="tagCloud"></div><script type="text/javascript" src="//post-theory.com/public/tagcloud/{text:Tumblr Name}?tn={Name}&sort=time&mincount=1&scale=false&html=ul&tagct=(%24)&scalect=false" async="async"></script>
+        <% if environment == :development %>
+          <div id="tagCloud"></div><script type="text/javascript" src="//post-theory.com/public/tagcloud/ryo-lovelive?tn={Name}&sort=time&mincount=1&scale=false&html=ul&tagct=(%24)&scalect=false" async="async"></script>
+        <% elsif environment == :build %>
+          <div id="tagCloud"></div><script type="text/javascript" src="//post-theory.com/public/tagcloud/{text:Tumblr Name}?tn={Name}&sort=time&mincount=1&scale=false&html=ul&tagct=(%24)&scalect=false" async="async"></script>
+        <% end %>
       </div>
     </div>
   </div>

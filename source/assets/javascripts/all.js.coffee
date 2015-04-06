@@ -13,6 +13,7 @@ $ ->
   # Masonry
   $masonryParent = $('.js-masonryParent')
   $masonryParent.imagesLoaded ->
+  # $win.on 'load', ->
     $masonryParent.masonry
       itemSelector: '.js-masonryChild'
       gutter: 0
