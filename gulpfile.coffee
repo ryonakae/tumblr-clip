@@ -1,5 +1,6 @@
 gulp   = require 'gulp'
 inline = require 'gulp-inline-source'
+rename = require 'gulp-rename'
 
 gulp.task 'inline', ->
   gulp
@@ -10,3 +11,5 @@ gulp.task 'inline', ->
       inlineCSS: true
       pretty: true
     .pipe gulp.dest 'build/'
+    .pipe rename 'clip.html'
+    .pipe gulp.dest './'
