@@ -22,6 +22,7 @@
     "gulp-inline-source": "^1.2.0"
   },
   "scripts": {
+    "watch": "bundle exec middleman server",
     "build": "bundle exec middleman build && gulp inline"
   }
 }

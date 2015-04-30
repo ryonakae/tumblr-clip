@@ -22,15 +22,24 @@ $ ->
   # Inifinite Scroll
   $pager = $('.js-pager')
   $pagerNext = $('.js-pager-next')
+  $loader = $('.js-loader')
   $masonryParent.infinitescroll
     navSelector: $pager
     nextSelector: $pagerNext
     itemSelector: '.m-post'
+    loadingImg: ''
+    loadingText: ''
     (elm) ->
+      # loading
+      $loader.addClass('is-active')
       $newItem = $(elm).css('opacity' : 0)
+      # load done
       $newItem.imagesLoaded ->
         $masonryParent.masonry('appended', $newItem)
         $newItem.css('opacity' : 1)
+        setTimeout ->
+          $loader.removeClass('is-active')
+        , 400
 
 
   # Image URL
