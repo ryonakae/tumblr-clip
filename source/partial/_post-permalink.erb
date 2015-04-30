@@ -1,0 +1,75 @@
+<!-- post {PostType} -->
+{block:Posts}
+  <article class="m-post m-post--permalink">
+    <!-- thumbnail -->
+    <div class="m-post-thumbnail">
+      {block:Photo}
+        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+      {/block:Photo}
+
+      {block:Photoset}
+        {Photoset-500}
+      {/block:Photoset}
+    </div>
+
+    <!-- info -->
+    <div class="m-post-info">
+      <div class="m-post-infoUrl">
+        <i class="m-post-infoUrlIcon m-icon icon-link"></i>
+        {block:Photo}
+          <input type="text" name="imageurl" value="{PhotoURL-HighRes}" readonly class="m-post-infoUrlInput js-inputUrl"></input>
+        {/block:Photo}
+        {block:Photoset}
+          <input type="text" name="imageurl" value="no url" readonly class="m-post-infoUrlInput js-inputUrl"></input>
+        {/block:Photoset}
+      </div>
+      {block:Photo}
+      <div class="m-post-infoTweet">
+        <% if environment == :development %>
+          <a href="https://twitter.com/share?url={PhotoURL-HighRes}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=510');return false;">
+            <i class="m-icon icon-twitter"></i>
+          </a>
+        <% elsif environment == :build %>
+          <a href="https://twitter.com/share?url={PhotoURL-HighRes}" target="_blank" onclick="ga('send', 'event', 'share-twitter', 'Click', '{PhotoURL-HighRes}');javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=510');return false;">
+            <i class="m-icon icon-twitter"></i>
+          </a>
+        <% end %>
+      </div>
+      {/block:Photo}
+    </div>
+
+    <!-- tag -->
+    {block:HasTags}
+      <ul class="m-post-tag">
+        {block:Tags}
+          <li class="m-post-tagItem">
+            <a href="{TagURL}">#{Tag}</a>
+          </li>
+        {/block:Tags}
+      </ul>
+    {/block:HasTags}
+
+    <!-- footer -->
+    <footer class="m-post-footer">
+      {block:RebloggedFrom}
+        <!-- reblogged from -->
+        <div class="m-rebloggedFrom">
+          <span class="m-rebloggedFrom-from">Reblogged from <a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}">{ReblogParentName}</a></span>
+          <span class="m-rebloggedFrom-by">Posted by <a href="{ReblogRootURL}"><img src="{ReblogRootPortraitURL-16}">{ReblogRootName}</a></span>
+        </div>
+      {/block:RebloggedFrom}
+      {block:NoteCount}
+        <!-- notecount -->
+        <div class="m-noteCount">
+          <a href="{Permalink}#notes" name="notes">{NoteCount} Notes</a>
+        </div>
+      {/block:NoteCount}
+      {block:PostNotes}
+        <!-- postnotes -->
+        <div class="m-postNotes">
+          {PostNotes}
+        </div>
+      {/block:PostNotes}
+    </footer>
+  </article>
+{/block:Posts}

@@ -1,40 +1,25 @@
 .m-tagCloud
   padding-top: 1em
   padding-bottom: 1em
-  display: table
   width: 100%
 
   +mediaquery-tablet-small
     padding-top: 0.7em
     padding-bottom: 0.7em
 
-.m-tagCloud-title
-  display: table-cell
-  vertical-align: middle
-  font-weight: bold
-  font-size: rem(13)
-  color: palette("font", "tagcloudtitle")
-  width: 4em
-
-  +mediaquery-tablet-small
-    font-size: rem(11)
-    width: 3em
-
 .m-tagCloud-list
-  display: table-cell
-  vertical-align: middle
+  width: 100%
+  overflow: hidden
 
   ul
     list-style-type: none
-    margin: -0.2em 0 0
+    margin: 0 -0.5em
     padding: 0
     line-height: 1.4
 
-    +mediaquery-tablet-small
-      margin-top: -0.5em
-
   li
     display: inline-block
+    vertical-align: top
     margin-left: 0.5em
     margin-right: 0.5em
     font-size: rem(13)
@@ -42,6 +27,8 @@
 
     > span:before
       content: '#'
+      margin-left: 2px
+      vertical-align: middle
 
     +mediaquery-tablet-small
       font-size: rem(11)
