@@ -23,6 +23,35 @@ Clipは、画像会話に特化したTumblrテーマです。
 * タグ一覧から表示したいタグを簡単に探せる
 
 
+## 導入方法
+1. [このテーマのHTML](https://raw.githubusercontent.com/ryonakae/tumblr-clip/master/clip.html)をコピーする
+2. Tumblrのテーマカスタマイズ画面を開く(自分のブログのトップページや、ダッシュボードから開けます)
+3. 「HTMLを編集」をクリック
+4. 既存のHTMLを全て削除、最初にコピーしたこのテーマのHTMLをペースト
+5. 「保存」をクリック
+
+
+## オプション
+
+| 項目 | 説明 |
+|-------|-----|
+| Link Color | リンクの色をカラーピッカーから変更できます。初期値は`#33A6B8`です |
+| Show Description | ブログタイトルの下に説明を表示します |
+| Show Profile Image | ブログタイトルの左にプロフィール画像を表示します |
+| Enable Google Analytics | Google Analyticsを有効にします。有効にした場合は下部の「Google Analytics ID」に取得したアナリティクスIDを入力してください |
+| Tumblr Name | `http://xxxxx.tumblr.com/`の`xxxxx`の部分を入力してください。タグ一覧の取得および表示に必要です |
+| Twitter User ID | OGP情報にTwitterのユーザーIDを含めたい場合は入力してください |
+| Google Analytics ID | 「Enable Google Analytics」を有効にした場合に、取得したアナリティクスIDを入力してください |
+
+
+## 注意事項
+### 投稿タイプの制限について
+現状、投稿タイプが「写真」以外には対応していません。
+
+* 画像会話に特化したTumblrテーマだしテキストとかいらないでしょ…という感じで……
+* とはいえAbout的なページが欲しい場合もあるでしょうし、少なくとも詳細ページだけは写真以外の投稿タイプに対応するように現在アップデート作業中です
+
+
 ## Author
 ### RYO NAKAE
 Web Designer in Kyoto, Japan.
